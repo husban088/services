@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&family=Poppins:wght@100&family=Ubuntu:ital,wght@0,300;0,400;1,300;1,700&display=swap");
+
+@font-face {
+  font-family: "Fascinate", cursive;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  min-height: 140vh;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  max-width: 1140px;
+}
+.content-wrapper {
+  position: absolute;
+  width: 50%;
+  color: #fff;
+}
+
+.wheel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.line-dot {
+  display: none;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  border-left: none;
+  box-sizing: content-box;
+}
+
+.marge-line {
+  display: none;
+  width: 690px;
+  height: 690px;
+  border-radius: 100%;
+}
+
+.step-dot {
+  display: none;
+  width: 750px;
+  height: 750px;
+  border-radius: 100%;
+}
+
+.info-token {
+  width: 850px;
+  height: 850px;
+  border-radius: 100%;
+}
+
+ul {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+ul.line-dot,
+ul.marge-line {
+  position: absolute;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.dot {
+  position: absolute;
+  inset: -18px;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+}
+.line-dot .dot {
+  animation: expand 0.6s linear;
+}
+.marge-line .dot div {
+  animation: heightmap 0.6s linear;
+}
+
+.line-dot .dot div {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background: #fff;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.line-dot .dot div:after {
+  content: "";
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ccc;
+  transform: translate(-50%, -50%);
+}
+
+.marge-line .dot div {
+  width: 5px;
+  height: 100px;
+  background: #fff;
+  display: block;
+  margin: auto;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.step-dot .dot div {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ccc;
+  animation: scaling 0.6s linear !important;
+}
+.step-dot div {
+  transform: rotate(calc(-30deg * var(--i)));
+}
+.step-dot .dot div {
+  padding: 10px;
+}
+
+p {
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 5px;
+}
+
+h3 {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+}
+h2 {
+  font-family: "Fascinate";
+  font-size: 2em;
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Fascinate";
+  font-size: 3.5em;
+  line-height: 1;
+  margin: 0;
+}
+
+.info-token div {
+  width: 400px;
+  height: 120px;
+  background: yellow;
+  display: block;
+  margin: auto;
+  border-radius: 100px;
+  box-shadow: 0 0 10px #ccc;
+  padding: 20px 40px;
+  text-align: left;
+}
+.info-token .dot {
+  transform: rotate(90deg) translate(0px, 0px);
+}
+
+.info-token div {
+  transform: rotate(-90deg) translate(-385px, 0px);
+}
+.rotate .dot {
+  transform: rotate(calc(30deg * var(--i)));
+  transition: 0.6s linear;
+}
+.rotate .dot div {
+  transform: rotate(calc(-30deg * var(--i))) translate(190px, 0px);
+  transition: 0.6s linear;
+  transition-delay: 0.9s;
+}
+
+.knob {
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f9f9f9;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #000;
+}
+.knob ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.knob ul li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i)));
+  animation: expand 0.6s linear;
+}
+.knob ul li div {
+  width: 85px;
+  height: 40px;
+  background: transparent;
+  display: block;
+  margin: auto;
+  text-align: left;
+}
+
+.knob-content {
+  position: absolute;
+  background: #fff;
+  height: 85%;
+  width: 85%;
+  border-radius: 100%;
+  box-shadow: 9px 8px 10px #0000003b;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+@keyframes expand {
+  from {
+    transform: rotate(calc(0deg * var(--i)));
+  }
+  to {
+    transform: rotate(calc(30deg * var(--i)));
+  }
+}
+
+@keyframes heightmap {
+  from {
+    height: 0;
+  }
+}
+
+@keyframes scaling {
+  from {
+    transform: rotate(calc(-0deg * var(--i))) scale(0);
+  }
+}
